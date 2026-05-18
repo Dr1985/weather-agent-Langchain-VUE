@@ -45,12 +45,13 @@ def get_current_weather(city: str) -> str:
 
 
 # 4. 初始化 LangChain 智能体 (Agent)
-# 使用阿里云通义千问的 OpenAI 兼容模式
+# 这里创建一个大模型客户端，用来让后面的智能体调用
+# 使用的是阿里云通义千问的 OpenAI 兼容接口
 llm = ChatOpenAI(
-    model="qwen-turbo",  # qwen3.5-flash
-    api_key=lambda: os.getenv("DASHSCOPE_API_KEY") or "",
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-    temperature=0,
+    model="qwen3.5-flash",  # 指定使用的模型名称，当前是 qwen3.5-flash
+    api_key=lambda: os.getenv("DASHSCOPE_API_KEY") or "",  # 从环境变量读取阿里云 API Key，避免写死在代码里
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",  # DashScope 的 OpenAI 兼容接口地址
+    temperature=0,  # 控制输出随机性，0 表示更稳定、更保守，适合天气查询这种明确任务
 )
 
 # 将我们写好的天气工具绑定给大模型
