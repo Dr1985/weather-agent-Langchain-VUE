@@ -1,0 +1,20 @@
+# 环境变量配置 (最最重要！绝对不能上传)
+.env
+*.env
+
+# Python 虚拟环境和缓存
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vue / Node 前端依赖包 (体积巨大，不能上传)
+frontend/node_modules/
+frontend/dist/
+npm-debug.log
+yarn-error.log
+
+# PyCharm 编辑器自带配置 (别人不需要你的编辑器配置)
+.idea/
+*.iml
