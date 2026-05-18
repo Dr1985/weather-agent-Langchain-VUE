@@ -2,6 +2,8 @@
 
 基于 **LangChain**、**FastAPI** 和 **Vue 3** 搭建的智能天气查询助手。后端通过大模型驱动的天气 Agent 自动调用工具获取实时数据，前端提供轻量、直观的聊天式交互界面。
 
+> 📘 语言切换说明：如果你想查看英文版文档，请打开 `README_EN.md`。
+
 ## 🛠️ 技术栈
 
 - **后端 (Backend)**: Python, FastAPI, LangChain, 阿里云通义千问大模型 (`qwen-max`), Uvicorn
@@ -45,10 +47,11 @@ DASHSCOPE_API_KEY=你的阿里云真实ApiKey
 pip install -r requirements.txt
 ```
 # 启动后端服务 (运行在 [http://127.0.0.1:8000](http://127.0.0.1:8000))
+```
 python main.py
+```
 3. 启动 Vue 前端
 打开一个新的终端标签页，进入 frontend 目录，安装依赖并启动：
-
 ```Bash
 # 进入前端目录
 cd frontend
